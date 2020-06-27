@@ -1,5 +1,9 @@
 library(shiny)
 
+# Training set
+TrainSet <- read.csv("training.csv", header = TRUE)
+TrainSet <- TrainSet[,-1]
+
 pageWithSidebar(
 
   # Page header

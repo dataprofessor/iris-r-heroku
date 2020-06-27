@@ -4,10 +4,6 @@ library(randomForest)
 # Read in the RF model
 model <- readRDS("model.rds")
 
-# Training set
-TrainSet <- read.csv("training.csv", header = TRUE)
-TrainSet <- TrainSet[,-1]
-
 shinyServer(function(input, output, session) {
 
   # Input Data
@@ -48,7 +44,7 @@ shinyServer(function(input, output, session) {
   # Prediction results table
   output$tabledata <- renderTable({
     if (input$submitbutton>0) {
-      isolate(datasetInput()) 
+      isolate(datasetInput())
     }
   })
 
